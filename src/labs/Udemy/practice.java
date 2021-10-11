@@ -44,6 +44,7 @@ public class practice {
         }
         nop();
         nopInsert();
+        nopInsertRefactorArraylist();
 
     }
     static void nop(){
@@ -85,7 +86,7 @@ public class practice {
             /* Move elements of arr[0..i-1], that are
                greater than key, to one position ahead
                of their current position */
-            
+
             while(j>=0 && m[j]>key ){
                 m[j+1] = m[j];
                 j = j-1;
@@ -94,6 +95,46 @@ public class practice {
 
         }
         for (int v:m ) {
+            System.out.print(v+"\t");
+        }
+    }
+    //currently, it has errors
+    static void nopInsertRefactorArraylist(){
+        System.out.println("\n\n nopInsertRefactorArrayList");
+        ArrayList<Integer> m = new ArrayList<>(6);
+        int nam = 0;
+        int arrLength1 = m.size();
+        System.out.println(arrLength1);
+        while(nam<6){
+            int rand = (int)(Math.random()*49)+1;
+            int result =  m.get(nam);
+            if (rand == result){
+                return;
+            }else{
+                m.set(nam, rand);
+            }
+            nam++;
+        }
+//        implement insertion sort
+        int arrLength = m.size();
+
+        for (int i = 1; i<arrLength;++i){
+            int key = m.get(i);
+            int j = i-1;
+
+
+            /* Move elements of arr[0..i-1], that are
+               greater than key, to one position ahead
+               of their current position */
+
+            while(j>=0 && m.get(i)>key ){
+                m.set(j+1,m.get(j));
+                j = j-1;
+            }
+            m.set(j+1,key);
+
+        }
+        for (Integer v:m ) {
             System.out.print(v+"\t");
         }
     }
