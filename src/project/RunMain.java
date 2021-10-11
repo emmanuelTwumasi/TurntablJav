@@ -34,6 +34,7 @@ public class RunMain {
         Student student1 =new Student(StudentGrades1);
         Student student2 = new Student(studentGrade2);
         Student student3 = new Student(studentGrade3);
+//        Student student7 = new Student("Adwoa");
         System.out.println("Student 1: "+student1.getAverageGrade());
         System.out.println("Student 2: "+student2.getAverageGrade());
         System.out.println("Student 2: "+student3.getAverageGrade());
@@ -67,7 +68,23 @@ public class RunMain {
         lecture.enter(student5);
         System.out.println("\n"+lecture);
         System.out.print(lecture.getHighestAverageGrade());
+//
+//        Register newReg = new Register();Register
 
+        ArrayList<Student> studentArrayList = new ArrayList<>();
+        studentArrayList.add(student1);
+        studentArrayList.add(student2);
+        studentArrayList.add(student3);
+        studentArrayList.add(student4);
+        studentArrayList.add(student5);
+        System.out.println();
+        for (Student s:studentArrayList
+             ) {
+            System.out.println(s);
+
+        }
+
+//        Register studentRegister = new Register(studentArrayList, student);
     }
 
 }

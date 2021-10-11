@@ -4,16 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Register {
-    List<Nameable> names;
     List<String> studentsNameList = new ArrayList<>();
-    private Student student;;
+    private Student student;
 
-    Register(List<Nameable> names){
-        this.names = names;
+    Register(List<String> studentsNameList, Student student){
+        this.student = student;
+        studentsNameList.add(this.student.getName());
     }
 
     List<String> getRegister(){
-        studentsNameList.add(student.getName());
         return studentsNameList;
+    }
+
+    public List<String> getRegisterByLevel() {
+        studentsNameList.add(student.getName());
+
     }
 }

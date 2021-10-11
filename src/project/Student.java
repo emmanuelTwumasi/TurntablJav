@@ -2,12 +2,14 @@ package project;
 
 import java.util.List;
 
-public class Student implements Nameable{
+public class Student implements Nameable,HasLevel{
     private String name;
     private List<Double> Grade;
+    private HasLevel hasLevel;
 
-    public Student(String name) {
+    public Student(String name,HasLevel level) {
         this.name = name;
+        this.hasLevel=level;
     }
 
     public Student(){}
@@ -15,6 +17,7 @@ public class Student implements Nameable{
     public Student(List<Double> grade) {
         this.Grade = grade;
     }
+
 
     public List<Double> getGrade() {
         return Grade;
@@ -25,7 +28,12 @@ public class Student implements Nameable{
     }
 
     public String getName() {
-        return name;
+        return this.name;
+    }
+
+    public HasLevel getHasLevel() {
+
+
     }
 
     public void setName(String name) {
@@ -47,5 +55,10 @@ public class Student implements Nameable{
         }
         return  sum/ Grade.size();
 
+    }
+
+    @Override
+    public Levels getLevel(Levels levels) {
+        return null;
     }
 }
