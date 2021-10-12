@@ -9,7 +9,7 @@ public class Register {
 
     Register(List<String> studentsNameList, Student student){
         this.student = student;
-        studentsNameList.add(this.student.getName());
+        studentsNameList.add(this.student.getStudentName());
     }
 
     List<String> getRegister(){
@@ -17,7 +17,7 @@ public class Register {
     }
 
     public List<String> getRegisterByLevel() {
-        studentsNameList.add(student.getName());
+        studentsNameList.add(student.getStudentName());
 
     }
 }

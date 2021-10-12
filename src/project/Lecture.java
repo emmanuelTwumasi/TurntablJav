@@ -6,7 +6,7 @@ import java.util.List;
 public class Lecture {
 
     String name;
-    List<Double> studentGrade =new ArrayList<>();
+    List<Student> students;
 
     public Lecture(String name) {
         this.name = name;
@@ -16,12 +16,12 @@ public class Lecture {
     public String toString() {
         return "Lecture{" +
                 "name='" + name + '\'' +
-                ", students=" + studentGrade +
+                ", students=" + students +
                 '}';
     }
 
     public void enter(Student student){
-        this.studentGrade.add(student.getAverageGrade());
+        this.students.add(student);
     }
 
     public  Double getHighestAverageGrade(){
@@ -29,9 +29,9 @@ public class Lecture {
 
         Double highestGrade = 0.0;
         int count =0;
-        while(count<studentGrade.size()) {
-                if(studentGrade.get(count) >highestGrade){
-                    highestGrade = studentGrade.get(count);
+        while(count<students.size()) {
+                if(students.get(count).getAverageGrade() >highestGrade){
+                    highestGrade = students.get(count).getAverageGrade();
                 }
                 count++;
         };

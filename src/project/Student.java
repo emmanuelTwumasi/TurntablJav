@@ -3,62 +3,48 @@ package project;
 import java.util.List;
 
 public class Student implements Nameable,HasLevel{
-    private String name;
-    private List<Double> Grade;
-    private HasLevel hasLevel;
+    private String studentName;
+    private List<Double> grades;
+    private Level studentLevel;
 
-    public Student(String name,HasLevel level) {
-        this.name = name;
-        this.hasLevel=level;
+    public Student(Level studentLevel) {
+        this.studentLevel=studentLevel;
     }
 
     public Student(){}
 
     public Student(List<Double> grade) {
-        this.Grade = grade;
+        this.grades = grade;
     }
 
 
-    public List<Double> getGrade() {
-        return Grade;
-    }
-
-    public void setGrade(List<Double> grade) {
-        Grade = grade;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public HasLevel getHasLevel() {
-
-
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setGrades(List<Double> grades) {
+        this.grades = grades;
     }
 
     @Override
+    public String getStudentName() {
+        return this.studentName;
+    }
+
+    @Override
+    public Level getLevel(){
+        return this.studentLevel;
+    }
+    @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
-                ", Grade=" + Grade +
+                "name='" + studentName + '\'' +
+                ", Grade=" + grades +
                 '}';
     }
 
     public Double getAverageGrade() {
         Double sum = 0.0;
-        for (Double b: Grade) {
-            sum += b;
+        for (Double grade: grades) {
+            sum += grade;
         }
-        return  sum/ Grade.size();
-
+        return  sum/grades.size();
     }
 
-    @Override
-    public Levels getLevel(Levels levels) {
-        return null;
-    }
 }

@@ -2,5 +2,5 @@ package project;
 
 interface Nameable {
 
-    String getName();
+    String getStudentName();
 }
